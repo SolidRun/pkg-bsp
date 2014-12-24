@@ -4,7 +4,7 @@ Release: 1
 License: MIT
 Group: System/Base
 Summary: Board-Support package for Cubox-i
-Source: bsp-cuboxi-%{version}-%(echo %{release} | cut -d. --complement -f1).tar.gz
+Source: bsp-cuboxi-%{version}.tar.gz
 
 Requires: udev
 Requires: firmware-imx6
