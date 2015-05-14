@@ -11,3 +11,6 @@
 
 %:
 	dh $@ 
+
+override_dh_installudev:
+	dh_installudev --name=imx6
