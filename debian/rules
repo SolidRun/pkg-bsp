@@ -9,8 +9,13 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+export DESTDIR=$(CURDIR)/debian/bsp-cuboxi
+
 %:
 	dh $@ 
+
+override_dh_auto_install:
+	install -v -m755 -D initramfs.imx-sdma.sh $(DESTDIR)/etc/initramfs-tools/hooks/imx-sdma
 
 override_dh_installudev:
 	dh_installudev --name=imx6
