@@ -16,6 +16,8 @@ export DESTDIR=$(CURDIR)/debian/bsp-cuboxi
 
 override_dh_auto_install:
 	install -v -m755 -D initramfs.imx-sdma.sh $(DESTDIR)/etc/initramfs-tools/hooks/imx-sdma
+	install -v -m644 -D imx-hdmi-soc.conf $(DESTDIR)/usr/share/alsa/cards/imx-hdmi-soc.conf
+	install -v -m644 -D imx-spdif.conf $(DESTDIR)/usr/share/alsa/cards/imx-spdif.conf
 
 override_dh_installudev:
 	dh_installudev --name=imx6
