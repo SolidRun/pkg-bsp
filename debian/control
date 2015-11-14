@@ -8,6 +8,6 @@ Homepage: <insert the upstream URL, if relevant>
 
 Package: bsp-cuboxi
 Architecture: any
-Depends: firmware-imx6, cuboxi-firmware-wireless
+Depends: firmware-imx, cuboxi-firmware-wireless
 Description: Todo
  T. O. D. O.

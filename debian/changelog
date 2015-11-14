@@ -1,3 +1,9 @@
+bsp-cuboxi (3) stable; urgency=low
+
+  * renamed firmware package dependency
+
+ -- Josua Mayer <josua@linux.site>  Sat, 14 Nov 2015 17:16:45 +0000
+
 bsp-cuboxi (2) stable; urgency=low
 
   * also pack kernel-release-specific sdma firmware in initramfs
