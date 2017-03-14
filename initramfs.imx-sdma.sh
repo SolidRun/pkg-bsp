@@ -26,3 +26,6 @@ if [ -d "/lib/firmware/${version}/imx/sdma" ]; then
 	mkdir -p  $DESTDIR/lib/firmware/${version}/imx/sdma
 	cp /lib/firmware/${version}/imx/sdma/*.bin $DESTDIR/lib/firmware/${version}/imx/sdma/
 fi
+
+# finally install kernel module (if it is a module)
+manual_add_modules imx-sdma
