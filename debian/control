@@ -1,7 +1,7 @@
 Source: bsp-cuboxi
-Section: unknown
+Section: admin
 Priority: extra
-Maintainer: unknown <unknown>
+Maintainer: Josua Mayer <josua@solid-run.com>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
 Homepage: <insert the upstream URL, if relevant>
@@ -9,5 +9,5 @@ Homepage: <insert the upstream URL, if relevant>
 Package: bsp-cuboxi
 Architecture: any
 Depends: firmware-imx, cuboxi-firmware-wireless
-Description: Todo
- T. O. D. O.
+Description: SolidRun i.MX6 BSP
+ Pull-in package for essential Board-Support on SolidRun i.MX6 devices.
