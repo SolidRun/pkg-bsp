@@ -2,7 +2,7 @@ Source: bsp-cuboxi
 Section: admin
 Priority: extra
 Maintainer: Josua Mayer <josua@solid-run.com>
-Build-Depends: debhelper (>= 9)
+Build-Depends: debhelper (>= 9), u-boot-tools
 Standards-Version: 3.9.6
 Homepage: <insert the upstream URL, if relevant>
 
@@ -11,3 +11,9 @@ Architecture: any
 Depends: firmware-imx, cuboxi-firmware-wireless
 Description: SolidRun i.MX6 BSP
  Pull-in package for essential Board-Support on SolidRun i.MX6 devices.
+
+Package: sr-imx6-bootscript
+Architecture: any
+Conflicts: linux-image-3.14.y-fslc-imx6-sr (<= 3.14.79pkg11)
+Description: SolidRun i.MX6 Boot-Script
+ Default boot-script to handle updates in the early boot process before uEnv or extlinux.conf kick in.

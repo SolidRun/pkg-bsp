@@ -1,0 +1,77 @@
+#
+# SolidRun i.MX6 Debian Boot Script
+# 
+# Copyright: 2018 Josua Mayer
+#
+# This is a transitional boot-script to handle updates
+# in the boot process with the legacy 2013.10 U-Boot.
+#
+
+# parse version variable, if any
+# (enabled on builds since March 2018)
+if test -n "$ver"; then
+	# copy version string to memory
+	env export 0x12000000 ver
+
+	# now memory looks like this
+	# "ver=U-Boot 2017.11-"...
+
+	# copy major to start of variable
+	# 4 bytes from offset 11 to offset 4
+	cp.b 0x1200000b 0x12000004 4
+	# append minor version
+	# 2 bytes from offset 16, to offset 8
+	cp.b 0x12000010 0x12000008 2
+	# terminate with null byte
+	mw.b 0x1200000a 0 1
+
+	# read back variable
+	env import 0x12000000
+else
+	# set fall-back version as 0 (we really don't know)
+	setenv ver 0
+fi
+
+# apply compatibility hacks for older versions as necessary
+if test $ver < 201711; then
+	# There are now seperate DTBs for devices without eMMC!
+	if test -n "$somrev" && test "$somrev" == "-som-v15"; then
+		# Because we can't tell from this U-Boot, assume eMMC is present.
+		echo "Assuming eMMC is present,"
+		echo "for proper detection, upgrade U-Boot to 2017.11 or later."
+
+		# overriding the somrev variable is enough to fixup the existing autodetectfdt macro
+		setenv somrev "-emmc-som-v15"
+	fi
+
+	# Guessing this is 2013.10
+	# else-case from original bootcmd when loadbootscript fails
+	run autodetectfdt
+	if run loadbootenv; then
+		run importbootenv
+	fi
+	if test -n ${serverip}; then
+		run netboot
+	fi
+	if test ${bootfile} = auto; then
+		setenv origbootfile auto
+		setenv bootfile zImage
+		if run loadbootfile; then
+			run mmcboot
+		else
+			setenv bootfile uImage
+		fi
+	fi
+	if run loadbootfile; then
+		run mmcboot
+	else
+		setenv bootfile ${origbootfile}
+	fi
+fi
+
+# unset ver if it didn't exist before
+if test $ver == 0; then
+	setenv -f ver
+fi
+
+echo "Compatibility Boot-script finished, returning to U-Boot."

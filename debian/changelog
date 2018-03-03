@@ -1,3 +1,9 @@
+bsp-cuboxi (5) stable; urgency=medium
+
+  * introduce boot-script
+
+ -- Josua Mayer <josua@solid-run.com>  Sat, 03 Mar 2018 21:03:35 +0100
+
 bsp-cuboxi (4) stable; urgency=medium
 
   * explicitly add sdma module to initramfs

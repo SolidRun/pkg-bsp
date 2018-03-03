@@ -9,15 +9,20 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-export DESTDIR=$(CURDIR)/debian/bsp-cuboxi
+export DESTDIR_BSP=$(CURDIR)/debian/bsp-cuboxi
+export DESTDIR_BOOTSCR=$(CURDIR)/debian/sr-imx6-bootscript
 
 %:
 	dh $@ 
 
+override_dh_auto_build:
+	mkimage -A arm -O linux -T script -C none -a 0 -e 0 -d boot.txt boot.scr
+
 override_dh_auto_install:
-	install -v -m755 -D initramfs.imx-sdma.sh $(DESTDIR)/etc/initramfs-tools/hooks/imx-sdma
-	install -v -m644 -D imx-hdmi-soc.conf $(DESTDIR)/usr/share/alsa/cards/imx-hdmi-soc.conf
-	install -v -m644 -D imx-spdif.conf $(DESTDIR)/usr/share/alsa/cards/imx-spdif.conf
+	install -v -m755 -D initramfs.imx-sdma.sh $(DESTDIR_BSP)/etc/initramfs-tools/hooks/imx-sdma
+	install -v -m644 -D imx-hdmi-soc.conf $(DESTDIR_BSP)/usr/share/alsa/cards/imx-hdmi-soc.conf
+	install -v -m644 -D imx-spdif.conf $(DESTDIR_BSP)/usr/share/alsa/cards/imx-spdif.conf
+	install -v -m644 -D boot.scr $(DESTDIR_BOOTSCR)/boot/boot.scr
 
 override_dh_installudev:
 	dh_installudev --name=imx6
