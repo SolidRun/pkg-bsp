@@ -1,3 +1,10 @@
+bsp-solidrun (6) stable; urgency=medium
+
+  * rename source package
+  * add imx8
+
+ -- Josua Mayer <josua@solid-run.com>  Thu, 11 Oct 2018 14:40:13 +0200
+
 bsp-cuboxi (5) stable; urgency=medium
 
   * introduce boot-script
