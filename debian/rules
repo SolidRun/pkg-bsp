@@ -14,7 +14,7 @@ export DESTDIR_BOOTSCR=$(CURDIR)/debian/sr-imx6-bootscript
 export DESTDIR_IMX8=$(CURDIR)/debian/bsp-solidrun-imx8
 
 %:
-	dh $@ 
+	dh $@ --with=config-package
 
 override_dh_auto_build:
 	mkimage -A arm -O linux -T script -C none -a 0 -e 0 -d boot.txt boot.scr
@@ -27,7 +27,7 @@ override_dh_auto_install:
 	install -v -m644 -D boot.scr $(DESTDIR_BOOTSCR)/boot/boot.scr
 
 	# i.MX8
-	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX8)/etc/flash-kernel/db
+	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX8)/etc/flash-kernel/db.bsp
 
 override_dh_installudev:
 	dh_installudev --name=imx6

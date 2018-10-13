@@ -2,7 +2,10 @@ Source: bsp-solidrun
 Section: admin
 Priority: extra
 Maintainer: Josua Mayer <josua@solid-run.com>
-Build-Depends: debhelper (>= 9), u-boot-tools
+Build-Depends:
+ debhelper (>= 9),
+ config-package-dev (>= 5.0),
+ u-boot-tools,
 Standards-Version: 3.9.6
 Homepage: <insert the upstream URL, if relevant>
 
@@ -19,6 +22,10 @@ Description: SolidRun i.MX6 Boot-Script
  Default boot-script to handle updates in the early boot process before uEnv or extlinux.conf kick in.
 
 Package: bsp-solidrun-imx8
+Section: config
 Architecture: arm64
+Depends: ${misc:Depends}
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
 Description: SolidRun i.MX8 BSP
  Provides essential configuration files and dependencies for SolidRun i.MX8 based devices.
