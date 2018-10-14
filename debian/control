@@ -11,15 +11,33 @@ Homepage: <insert the upstream URL, if relevant>
 
 Package: bsp-cuboxi
 Architecture: any-arm
-Depends: firmware-imx, cuboxi-firmware-wireless
-Description: SolidRun i.MX6 BSP
- Pull-in package for essential Board-Support on SolidRun i.MX6 devices.
+Depends: ${misc:Depends}, bsp-solidrun-imx6
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ This is a transitional package. It can safely be removed.
 
 Package: sr-imx6-bootscript
 Architecture: any-arm
 Conflicts: linux-image-3.14.y-fslc-imx6-sr (<= 3.14.79pkg11)
 Description: SolidRun i.MX6 Boot-Script
  Default boot-script to handle updates in the early boot process before uEnv or extlinux.conf kick in.
+
+Package: bsp-solidrun-imx6
+Section: config
+Architecture: any-arm
+Depends:
+ ${misc:Depends},
+ firmware-misc-nonfree (>= 20180518-1),
+ cuboxi-firmware-wireless-wifi,
+ cuboxi-firmware-wireless-wifi-config,
+ firmware-ti-connectivity (>= 20161130),
+ cuboxi-firmware-wireless-wifi-config-ti,
+ cuboxi-firmware-wireless-bluetooth-ti,
+Replaces: bsp-cuboxi (<< 7)
+Breaks: bsp-cuboxi (<< 7)
+Description: SolidRun i.MX6 BSP
+ Provides essential configuration files and dependencies for SolidRun i.MX6 based devices.
 
 Package: bsp-solidrun-imx8
 Section: config

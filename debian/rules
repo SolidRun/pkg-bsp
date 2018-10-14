@@ -9,8 +9,8 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-export DESTDIR_BSP=$(CURDIR)/debian/bsp-cuboxi
 export DESTDIR_BOOTSCR=$(CURDIR)/debian/sr-imx6-bootscript
+export DESTDIR_IMX6=$(CURDIR)/debian/bsp-solidrun-imx6
 export DESTDIR_IMX8=$(CURDIR)/debian/bsp-solidrun-imx8
 
 %:
@@ -20,11 +20,14 @@ override_dh_auto_build:
 	mkimage -A arm -O linux -T script -C none -a 0 -e 0 -d boot.txt boot.scr
 
 override_dh_auto_install:
-	# i.MX6
-	install -v -m755 -D initramfs.imx-sdma.sh $(DESTDIR_BSP)/etc/initramfs-tools/hooks/imx-sdma
-	install -v -m644 -D imx-hdmi-soc.conf $(DESTDIR_BSP)/usr/share/alsa/cards/imx-hdmi-soc.conf
-	install -v -m644 -D imx-spdif.conf $(DESTDIR_BSP)/usr/share/alsa/cards/imx-spdif.conf
+	# i.MX6 transitional boot-script for splitting out -eMMC DTB variants
 	install -v -m644 -D boot.scr $(DESTDIR_BOOTSCR)/boot/boot.scr
+
+	# i.MX6
+	install -v -m755 -D initramfs.imx-sdma.sh $(DESTDIR_IMX6)/etc/initramfs-tools/hooks/imx-sdma
+	install -v -m644 -D imx-hdmi-soc.conf $(DESTDIR_IMX6)/usr/share/alsa/cards/imx-hdmi-soc.conf
+	install -v -m644 -D imx-spdif.conf $(DESTDIR_IMX6)/usr/share/alsa/cards/imx-spdif.conf
+	install -v -m644 -D apt-preferences/bsp-solidrun-imx8 $(DESTDIR_IMX6)/etc/apt/preferences.d/bsp-solidrun-imx6
 
 	# i.MX8
 	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX8)/etc/flash-kernel/db.bsp
