@@ -28,6 +28,7 @@ override_dh_auto_install:
 
 	# i.MX8
 	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX8)/etc/flash-kernel/db.bsp
+	install -v -m644 -D apt-preferences/bsp-solidrun-imx8 $(DESTDIR_IMX8)/etc/apt/preferences.d/bsp-solidrun-imx8
 
 override_dh_installudev:
 	dh_installudev --name=imx6
