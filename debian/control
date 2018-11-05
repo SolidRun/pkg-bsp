@@ -10,7 +10,7 @@ Standards-Version: 3.9.6
 Homepage: <insert the upstream URL, if relevant>
 
 Package: bsp-cuboxi
-Architecture: any-arm
+Architecture: armel armhf
 Depends: ${misc:Depends}, bsp-solidrun-imx6
 Priority: optional
 Section: oldlibs
@@ -18,14 +18,14 @@ Description: transitional package
  This is a transitional package. It can safely be removed.
 
 Package: sr-imx6-bootscript
-Architecture: any-arm
+Architecture: armel armhf
 Conflicts: linux-image-3.14.y-fslc-imx6-sr (<= 3.14.79pkg11)
 Description: SolidRun i.MX6 Boot-Script
  Default boot-script to handle updates in the early boot process before uEnv or extlinux.conf kick in.
 
 Package: bsp-solidrun-imx6
 Section: config
-Architecture: any-arm
+Architecture: armel armhf
 Depends:
  ${misc:Depends},
  firmware-misc-nonfree (>= 20180518-1),
