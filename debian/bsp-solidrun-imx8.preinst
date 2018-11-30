@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+# https://www.debian.org/doc/debian-policy/ap-pkg-diversions.html
+if [ upgrade != "$1" ] || dpkg --compare-versions "$2" lt 8; then
+    dpkg-divert --package bsp-solidrun-imx8 --add --rename \
+        --divert /lib/firmware/ath10k/QCA6174/hw3.0/board.bin.upstream /lib/firmware/ath10k/QCA6174/hw3.0/board.bin
+fi
+
+#DEBHELPER#
+
+exit 0

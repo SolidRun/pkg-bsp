@@ -42,7 +42,10 @@ Description: SolidRun i.MX6 BSP
 Package: bsp-solidrun-imx8
 Section: config
 Architecture: arm64
-Depends: ${misc:Depends}
+Depends:
+ ${misc:Depends},
+ flash-kernel,
+ firmware-atheros (>=20160824-1),
 Provides: ${diverted-files}
 Conflicts: ${diverted-files}
 Description: SolidRun i.MX8 BSP

@@ -1,3 +1,9 @@
+bsp-solidrun (8) stable; urgency=medium
+
+  * imx8: add wifi firmware
+
+ -- Josua Mayer <josua@solid-run.com>  Fri, 30 Nov 2018 14:08:08 +0100
+
 bsp-solidrun (7) stable; urgency=medium
 
   * imx8: use diversions
