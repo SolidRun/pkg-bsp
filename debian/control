@@ -33,6 +33,7 @@ Depends:
  cuboxi-firmware-wireless-wifi-config,
  firmware-ti-connectivity (>= 20161130),
  cuboxi-firmware-wireless-wifi-config-ti,
+ cuboxi-firmware-wireless-bluetooth,
  cuboxi-firmware-wireless-bluetooth-ti,
 Replaces: bsp-cuboxi (<< 7)
 Breaks: bsp-cuboxi (<< 7)

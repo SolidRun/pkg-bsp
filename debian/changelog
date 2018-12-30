@@ -1,3 +1,9 @@
+bsp-solidrun (9) stable; urgency=medium
+
+  * imx6: pull in previously missed bluetooth firmware (broadcom)
+
+ -- Josua Mayer <josua@solid-run.com>  Sun, 30 Dec 2018 21:48:49 +0100
+
 bsp-solidrun (8) stable; urgency=medium
 
   * imx8: add wifi firmware
