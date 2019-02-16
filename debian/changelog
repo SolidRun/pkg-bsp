@@ -1,3 +1,9 @@
+bsp-solidrun (10) stable; urgency=medium
+
+  * add 8040
+
+ -- Josua Mayer <josua@solid-run.com>  Sat, 16 Feb 2019 18:47:34 +0100
+
 bsp-solidrun (9) stable; urgency=medium
 
   * imx6: pull in previously missed bluetooth firmware (broadcom)

@@ -51,3 +51,14 @@ Provides: ${diverted-files}
 Conflicts: ${diverted-files}
 Description: SolidRun i.MX8 BSP
  Provides essential configuration files and dependencies for SolidRun i.MX8 based devices.
+
+Package: bsp-solidrun-8040
+Section: config
+Architecture: arm64
+Depends:
+ ${misc:Depends},
+ flash-kernel,
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
+Description: SolidRun 8040 BSP
+ Provides essential configuration files and dependencies for SolidRun 8040 based devices.
