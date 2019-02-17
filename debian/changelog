@@ -1,3 +1,9 @@
+bsp-solidrun (11) stable; urgency=medium
+
+  * add DTB for Clearfog GT
+
+ -- Josua Mayer <josua@solid-run.com>  Sun, 17 Feb 2019 13:39:10 +0100
+
 bsp-solidrun (10) stable; urgency=medium
 
   * add 8040
