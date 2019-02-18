@@ -13,3 +13,15 @@ DTB-Id: marvell/armada-8040-clearfog-gt-8k.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
+
+Machine: Marvell 8040 MACCHIATOBin Double-shot
+DTB-Id: marvell/armada-8040-mcbin.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: Marvell 8040 MACCHIATOBin Single-shot
+DTB-Id: marvell/armada-8040-mcbin-singleshot.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
