@@ -1,3 +1,9 @@
+bsp-solidrun (13) stable; urgency=medium
+
+  * add flash-kernel entry for Cubox Pulse
+
+ -- Josua Mayer <josua@solid-run.com>  Mon, 04 Mar 2019 15:54:48 +0100
+
 bsp-solidrun (12) stable; urgency=medium
 
   * add flash-kernel entries for macchiatobin

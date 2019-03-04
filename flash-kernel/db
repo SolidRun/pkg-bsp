@@ -8,6 +8,12 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
+Machine: SolidRun i.MX8MQ CuBox Pulse
+DTB-Id: fsl-imx8mq-cubox-pulse.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: SolidRun ClearFog GT 8K
 DTB-Id: marvell/armada-8040-clearfog-gt-8k.dtb
 Boot-Script-Path: /boot/boot.scr
