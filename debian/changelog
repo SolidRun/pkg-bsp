@@ -1,3 +1,9 @@
+bsp-solidrun (15) stable; urgency=medium
+
+  * include sdma initramfs hook ... :(
+
+ -- Josua Mayer <josua@solid-run.com>  Tue, 07 May 2019 13:01:13 +0200
+
 bsp-solidrun (14) stable; urgency=medium
 
   * include sdma firmware on i.MX8

@@ -35,7 +35,7 @@ override_dh_auto_install:
 	install -v -m644 -D apt-preferences/bsp-solidrun-imx8 $(DESTDIR_IMX8)/etc/apt/preferences.d/bsp-solidrun-imx8
 	install -v -m755 -D initramfs-tools/ath10k-fw.sh $(DESTDIR_IMX8)/etc/initramfs-tools/hooks/ath10k-fw
 	install -v -m644 -D firmware/Silex_OG_BE_FIX.bin $(DESTDIR_IMX8)/lib/firmware/ath10k/QCA6174/hw3.0/board.bin
-	install -v -m755 -D initramfs-tools/imx-sdma.sh $(DESTDIR_IMX6)/etc/initramfs-tools/hooks/imx-sdma
+	install -v -m755 -D initramfs-tools/imx-sdma.sh $(DESTDIR_IMX8)/etc/initramfs-tools/hooks/imx-sdma
 
 	# 8040
 	install -v -m644 -D flash-kernel/db $(DESTDIR_8040)/etc/flash-kernel/db.bsp
