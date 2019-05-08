@@ -1,3 +1,9 @@
+bsp-solidrun (16) stable; urgency=medium
+
+  * imx6, imx8: trigger update-initramfs
+
+ -- Josua Mayer <josua@solid-run.com>  Wed, 08 May 2019 13:04:37 +0200
+
 bsp-solidrun (15) stable; urgency=medium
 
   * include sdma initramfs hook ... :(
