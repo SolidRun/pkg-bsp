@@ -31,3 +31,21 @@ DTB-Id: marvell/armada-8040-mcbin-singleshot.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
+
+Machine: SolidRun Cubox-i Solo/DualLite
+DTB-Id: imx6dl-cubox-i.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.imx-base bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun Cubox-i Solo/DualLite (1.5som)
+DTB-Id: imx6dl-cubox-i-som-v15.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.imx-base bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun Cubox-i Solo/DualLite (1.5som+emmc)
+DTB-Id: imx6dl-cubox-i-emmc-som-v15.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.imx-base bootscr.uboot-generic
+Required-Packages: u-boot-tools

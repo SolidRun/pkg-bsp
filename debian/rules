@@ -25,6 +25,7 @@ override_dh_auto_install:
 	install -v -m644 -D boot.scr $(DESTDIR_BOOTSCR)/boot/boot.scr
 
 	# i.MX6
+	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX6)/etc/flash-kernel/db.bsp
 	install -v -m755 -D initramfs-tools/imx-sdma.sh $(DESTDIR_IMX6)/etc/initramfs-tools/hooks/imx-sdma
 	install -v -m644 -D imx-hdmi-soc.conf $(DESTDIR_IMX6)/usr/share/alsa/cards/imx-hdmi-soc.conf
 	install -v -m644 -D imx-spdif.conf $(DESTDIR_IMX6)/usr/share/alsa/cards/imx-spdif.conf
