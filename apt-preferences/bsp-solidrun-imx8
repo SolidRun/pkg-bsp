@@ -2,3 +2,8 @@
 Package: libegl1 libegl1-dbgsym libgl1 libgl1-dbgsym libgles2 libgles2-dbgsym libglvnd0 libglvnd0-dbgsym libglvnd-core-dev libglvnd-dev libglx0 libglx0-dbgsym libopengl0 libopengl0-dbgsym
 Pin: release l=BSP:IMX8
 Pin-Priority: 1000
+
+# lower priority of packages that moved to generic repo
+Package: bsp-solidrun-* solidrun-keyring
+Pin: release l=BSP:IMX8
+Pin-Priority: 499

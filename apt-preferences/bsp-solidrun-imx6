@@ -8,3 +8,8 @@ Pin-Priority: 1000
 Package: libgbm libgbm-dev
 Pin: release l=BSP:IMX6
 Pin-Priority: 1000
+
+# lower priority of packages that moved to generic repo
+Package: bsp-solidrun-* devmem2 solidrun-keyring
+Pin: release l=BSP:IMX6
+Pin-Priority: 499
