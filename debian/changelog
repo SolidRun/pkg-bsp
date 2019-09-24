@@ -1,3 +1,10 @@
+bsp-solidrun (19) stable; urgency=medium
+
+  * pin packages that changed repository
+  * imx6: pin libgbm package
+
+ -- Josua Mayer <josua@solid-run.com>  Tue, 24 Sep 2019 17:31:05 +0200
+
 bsp-solidrun (18) stable; urgency=medium
 
   * imx6: allow flash-kernel to use solidrun fork
