@@ -1,3 +1,9 @@
+bsp-solidrun (20) stable; urgency=medium
+
+  * imx6: bugfix
+
+ -- Josua Mayer <josua@solid-run.com>  Tue, 24 Sep 2019 18:46:18 +0200
+
 bsp-solidrun (19) stable; urgency=medium
 
   * pin packages that changed repository
