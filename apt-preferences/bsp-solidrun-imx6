@@ -5,7 +5,7 @@ Pin-Priority: 1000
 
 # give priority to Vivante libgbm
 # - prevents version upgrade of libgbm-dev
-Package: libgbm libgbm-dev
+Package: libgbm1 libgbm-dev
 Pin: release l=BSP:IMX6
 Pin-Priority: 1000
 
