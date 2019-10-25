@@ -1,3 +1,9 @@
+bsp-solidrun (22) stable; urgency=medium
+
+  * imx8: HummingBoard Pulse: add i.MX8MM variant
+
+ -- Josua Mayer <josua@solid-run.com>  Fri, 25 Oct 2019 22:24:39 +0200
+
 bsp-solidrun (21) stable; urgency=medium
 
   * imx6: pin libdrm and x-server
