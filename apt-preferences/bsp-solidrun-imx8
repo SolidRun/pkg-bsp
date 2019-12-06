@@ -1,5 +1,11 @@
-# always install forked glvnd
-Package: libegl1 libegl1-dbgsym libgl1 libgl1-dbgsym libgles2 libgles2-dbgsym libglvnd0 libglvnd0-dbgsym libglvnd-core-dev libglvnd-dev libglx0 libglx0-dbgsym libopengl0 libopengl0-dbgsym
+# give priority to Vivante libgbm
+# - prevents version upgrade of libgbm-dev
+Package: libgbm1 libgbm-dev
+Pin: release l=BSP:IMX8
+Pin-Priority: 1000
+
+# choose forked libdrm (patched DRM_CAS)
+Package: libdrm-amdgpu1 libdrm-common libdrm-dev libdrm-etnaviv1 libdrm-exynos1 libdrm-freedreno1 libdrm-intel1 libdrm-nouveau2 libdrm-omap1 libdrm-radeon1 libdrm-tegra0 libdrm-vivante1 libdrm2
 Pin: release l=BSP:IMX8
 Pin-Priority: 1000
 
