@@ -10,6 +10,6 @@ Pin: release l=BSP:IMX8
 Pin-Priority: 1000
 
 # lower priority of packages that moved to generic repo
-Package: bsp-solidrun-* solidrun-keyring
+Package: bsp-solidrun-* expand-fs runonce solidrun-keyring
 Pin: release l=BSP:IMX8
 Pin-Priority: 499
