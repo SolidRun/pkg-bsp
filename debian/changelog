@@ -1,3 +1,12 @@
+bsp-solidrun (23) stable; urgency=medium
+
+  * imx8: add udev rules
+  * pin more packages that changed repository
+  * imx8: prefer patched libdrm
+  * imx8: prefer vivante libgbm
+
+ -- Josua Mayer <josua@solid-run.com>  Sat, 07 Dec 2019 16:58:42 +0100
+
 bsp-solidrun (22) stable; urgency=medium
 
   * imx8: HummingBoard Pulse: add i.MX8MM variant
