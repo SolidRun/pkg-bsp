@@ -44,3 +44,4 @@ override_dh_auto_install:
 
 override_dh_installudev:
 	dh_installudev --name=imx6
+	dh_installudev --name=imx8
