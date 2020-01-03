@@ -1,3 +1,9 @@
+bsp-solidrun (26) stable; urgency=medium
+
+  * introduce lx2k
+
+ -- Josua Mayer <josua@solid-run.com>  Fri, 03 Jan 2020 21:55:08 +0100
+
 bsp-solidrun (25) stable; urgency=medium
 
   * imx6: allow testing kernel flavour

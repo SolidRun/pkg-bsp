@@ -2,6 +2,19 @@
 # Database of SolidRun boards, either missing upstream or with changes
 #
 
+#
+# NXP LX2K
+#
+Machine: SolidRun LX2160A COM express type 7 module
+DTB-Id: freescale/fsl-lx2160a-cex7.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+#
+# NXP i.MX8
+#
+
 Machine: SolidRun i.MX8MM HummingBoard Pulse
 DTB-Id: imx8mm-hummingboard-pulse.dtb
 Boot-Script-Path: /boot/boot.scr
@@ -19,6 +32,10 @@ DTB-Id: fsl-imx8mq-cubox-pulse.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
+
+#
+# Marvell Armada 8000
+#
 
 Machine: SolidRun ClearFog GT 8K
 DTB-Id: marvell/armada-8040-clearfog-gt-8k.dtb

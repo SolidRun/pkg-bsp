@@ -13,6 +13,7 @@ export DESTDIR_BOOTSCR=$(CURDIR)/debian/sr-imx6-bootscript
 export DESTDIR_IMX6=$(CURDIR)/debian/bsp-solidrun-imx6
 export DESTDIR_IMX8=$(CURDIR)/debian/bsp-solidrun-imx8
 export DESTDIR_8040=$(CURDIR)/debian/bsp-solidrun-8040
+export DESTDIR_LX2K=$(CURDIR)/debian/bsp-solidrun-lx2k
 
 %:
 	dh $@ --with=config-package
@@ -41,6 +42,9 @@ override_dh_auto_install:
 	# 8040
 	install -v -m644 -D flash-kernel/db $(DESTDIR_8040)/etc/flash-kernel/db.bsp
 	install -v -m644 -D flash-kernel/armada-8040-clearfog-gt-8k.dtb $(DESTDIR_8040)/etc/flash-kernel/dtbs/armada-8040-clearfog-gt-8k.dtb
+
+	# LX2K
+	install -v -m644 -D flash-kernel/db $(DESTDIR_LX2K)/etc/flash-kernel/db.bsp
 
 override_dh_installudev:
 	dh_installudev --name=imx6

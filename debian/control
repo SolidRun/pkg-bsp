@@ -63,3 +63,14 @@ Provides: ${diverted-files}
 Conflicts: ${diverted-files}
 Description: SolidRun 8040 BSP
  Provides essential configuration files and dependencies for SolidRun 8040 based devices.
+
+Package: bsp-solidrun-lx2k
+Section: config
+Architecture: arm64
+Depends:
+ ${misc:Depends},
+ flash-kernel,
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
+Description: SolidRun LX2K BSP
+ Provides essential configuration files and dependencies for SolidRun LX2K based devices.
