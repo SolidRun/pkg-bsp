@@ -53,6 +53,17 @@ Conflicts: ${diverted-files}
 Description: SolidRun i.MX8 BSP
  Provides essential configuration files and dependencies for SolidRun i.MX8 based devices.
 
+Package: bsp-solidrun-a38x
+Section: config
+Architecture: armhf
+Depends:
+ ${misc:Depends},
+ flash-kernel,
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
+Description: SolidRun A38X BSP
+ Provides essential configuration files and dependencies for SolidRun A38X based devices.
+
 Package: bsp-solidrun-8040
 Section: config
 Architecture: arm64

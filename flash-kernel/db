@@ -34,6 +34,24 @@ U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
 #
+# Marvell Armada 38x
+#
+
+Machine: SolidRun Clearfog GTR L8
+Kernel-Flavors: armmp
+DTB-Id: armada-385-clearfog-gtr-l8.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun Clearfog GTR S4
+Kernel-Flavors: armmp
+DTB-Id: armada-385-clearfog-gtr-s4.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+#
 # Marvell Armada 8000
 #
 
