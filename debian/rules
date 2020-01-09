@@ -42,6 +42,7 @@ override_dh_auto_install:
 
 	# A38X
 	install -v -m644 -D flash-kernel/db $(DESTDIR_A38X)/etc/flash-kernel/db.bsp
+	install -v -m644 -D apt-preferences/bsp-solidrun-a38x $(DESTDIR_A38X)/etc/apt/preferences.d/bsp-solidrun-a38x
 	install -v -m644 -D flash-kernel/armada-385-clearfog-gtr-l8.dtb $(DESTDIR_A38X)/etc/flash-kernel/dtbs/armada-385-clearfog-gtr-l8.dtb
 	install -v -m644 -D flash-kernel/armada-385-clearfog-gtr-s4.dtb $(DESTDIR_A38X)/etc/flash-kernel/dtbs/armada-385-clearfog-gtr-s4.dtb
 

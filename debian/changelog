@@ -1,3 +1,9 @@
+bsp-solidrun (28) stable; urgency=medium
+
+  * a38x: pull in forked kernel
+
+ -- Josua Mayer <josua@solid-run.com>  Thu, 09 Jan 2020 17:06:14 +0100
+
 bsp-solidrun (27) stable; urgency=medium
 
   * introduce a38x
