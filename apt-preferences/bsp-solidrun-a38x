@@ -1,4 +1,8 @@
 # choose forked linux-image-armmp (with missing a38x comphy driver)
+Package: linux-image-5.4.0-0.bpo.2-armmp linux-image-5.4.0-0.bpo.2-armmp-dbg
+Pin: release l=BSP:A38X
+Pin-Priority: 1000
+
 Package: linux-image-5.3.0-0.bpo.2-armmp linux-image-5.3.0-0.bpo.2-armmp-dbg
 Pin: release l=BSP:A38X
 Pin-Priority: 1000
