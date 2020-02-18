@@ -1,3 +1,9 @@
+bsp-solidrun (30) stable; urgency=medium
+
+  * a38x: update kernel
+
+ -- Josua Mayer <josua@solid-run.com>  Tue, 18 Feb 2020 17:13:45 +0100
+
 bsp-solidrun (29) stable; urgency=medium
 
   * a38x: update kernel
