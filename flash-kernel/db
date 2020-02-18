@@ -3,10 +3,27 @@
 #
 
 #
-# NXP LX2K
+# NXP LX2K (downstream)
 #
+
 Machine: SolidRun LX2160A COM express type 7 module
 DTB-Id: freescale/fsl-lx2160a-cex7.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+#
+# NXP LX2K (upstream)
+#
+
+Machine: SolidRun LX2160A Clearfog CX
+DTB-Id: freescale/fsl-lx2160a-clearfog-cx.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun LX2160A Honeycomb
+DTB-Id: freescale/fsl-lx2160a-honeycomb.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
