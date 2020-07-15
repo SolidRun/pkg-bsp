@@ -48,7 +48,6 @@ override_dh_auto_install:
 
 	# 8040
 	install -v -m644 -D flash-kernel/db $(DESTDIR_8040)/etc/flash-kernel/db.bsp
-	install -v -m644 -D flash-kernel/armada-8040-clearfog-gt-8k.dtb $(DESTDIR_8040)/etc/flash-kernel/dtbs/armada-8040-clearfog-gt-8k.dtb
 
 	# LX2K
 	install -v -m644 -D flash-kernel/db $(DESTDIR_LX2K)/etc/flash-kernel/db.bsp

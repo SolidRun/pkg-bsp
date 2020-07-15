@@ -1,3 +1,9 @@
+bsp-solidrun (32) stable; urgency=medium
+
+  * 8040: drop DTB file (now provided by kernel package)
+
+ -- Josua Mayer <josua@solid-run.com>  Wed, 15 Jul 2020 10:41:59 +0200
+
 bsp-solidrun (31) stable; urgency=medium
 
   * lx2k: add flash-kernel entries for mainline DTBs

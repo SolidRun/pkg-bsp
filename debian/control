@@ -70,6 +70,7 @@ Architecture: arm64
 Depends:
  ${misc:Depends},
  flash-kernel,
+ linux-image-arm64 (>= 5.2),
 Provides: ${diverted-files}
 Conflicts: ${diverted-files}
 Description: SolidRun 8040 BSP

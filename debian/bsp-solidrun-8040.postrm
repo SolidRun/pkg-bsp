@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -e
+
+# drop clearfog gt dtb
+dpkg-maintscript-helper rm_conffile /etc/flash-kernel/dtbs/armada-8040-clearfog-gt-8k.dtb 32~ bsp-solidrun-8040 -- "$@"
