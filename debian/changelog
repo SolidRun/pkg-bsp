@@ -1,3 +1,9 @@
+bsp-solidrun (33) stable; urgency=medium
+
+  * imx8: mq: rename DTBs
+
+ -- Josua Mayer <josua@solid-run.com>  Tue, 04 Aug 2020 11:52:36 +0200
+
 bsp-solidrun (32) stable; urgency=medium
 
   * 8040: drop DTB file (now provided by kernel package)

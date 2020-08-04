@@ -38,8 +38,20 @@ Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
 
+Machine: SolidRun i.MX8MQ HummingBoard Pulse (new filename)
+DTB-Id: imx8mq-hummingboard-pulse.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: SolidRun i.MX8MQ HummingBoard Pulse
 DTB-Id: fsl-imx8mq-hummingboard-pulse.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun i.MX8MQ CuBox Pulse (new filename)
+DTB-Id: imx8mq-cubox-pulse.dtb
 Boot-Script-Path: /boot/boot.scr
 U-Boot-Script-Name: bootscr.uboot-generic
 Required-Packages: u-boot-tools
