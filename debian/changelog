@@ -1,3 +1,9 @@
+bsp-solidrun (34) stable; urgency=medium
+
+  * imx8: mq: add dtb variant for som without wifi
+
+ -- Josua Mayer <josua@solid-run.com>  Mon, 14 Sep 2020 11:35:57 +0200
+
 bsp-solidrun (33) stable; urgency=medium
 
   * imx8: mq: rename DTBs
