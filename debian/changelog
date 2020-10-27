@@ -1,3 +1,9 @@
+bsp-solidrun (35) stable; urgency=medium
+
+  * fixup old dts filenames in boot.scr
+
+ -- Josua Mayer <josua@solid-run.com>  Tue, 27 Oct 2020 14:34:31 +0100
+
 bsp-solidrun (34) stable; urgency=medium
 
   * imx8: mq: add dtb variant for som without wifi

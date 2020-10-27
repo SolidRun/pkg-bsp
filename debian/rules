@@ -20,11 +20,11 @@ export DESTDIR_LX2K=$(CURDIR)/debian/bsp-solidrun-lx2k
 	dh $@ --with=config-package
 
 override_dh_auto_build:
-	mkimage -A arm -O linux -T script -C none -a 0 -e 0 -d boot.txt boot.scr
+	mkimage -A arm -O linux -T script -C none -a 0 -e 0 -d boot.imx6.txt boot.imx6.scr
 
 override_dh_auto_install:
 	# i.MX6 transitional boot-script for splitting out -eMMC DTB variants
-	install -v -m644 -D boot.scr $(DESTDIR_BOOTSCR)/boot/boot.scr
+	install -v -m644 -D boot.imx6.scr $(DESTDIR_BOOTSCR)/boot/boot.scr
 
 	# i.MX6
 	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX6)/etc/flash-kernel/db.bsp
@@ -35,6 +35,7 @@ override_dh_auto_install:
 
 	# i.MX8
 	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX8)/etc/flash-kernel/db.bsp
+	install -v -m644 -D flash-kernel/boot.imx8.txt $(DESTDIR_IMX8)/etc/flash-kernel/bootscript/imx8
 	install -v -m644 -D apt-preferences/bsp-solidrun-imx8 $(DESTDIR_IMX8)/etc/apt/preferences.d/bsp-solidrun-imx8
 	install -v -m755 -D initramfs-tools/ath10k-fw.sh $(DESTDIR_IMX8)/etc/initramfs-tools/hooks/ath10k-fw
 	install -v -m644 -D firmware/Silex_OG_BE_FIX.bin $(DESTDIR_IMX8)/lib/firmware/ath10k/QCA6174/hw3.0/board.bin

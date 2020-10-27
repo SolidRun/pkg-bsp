@@ -1,0 +1,9 @@
+# SolidRun i.MX8 Boot Script
+
+# translate old device-tree names
+if test ${fdtfile} = fsl-imx8mq-hummingboard-pulse.dtb; then
+	setenv fdtfile imx8mq-hummingboard-pulse.dtb
+fi
+if test ${fdtfile} = fsl-imx8mq-cubox-pulse.dtb; then
+	setenv fdtfile imx8mq-cubox-pulse.dtb
+fi
