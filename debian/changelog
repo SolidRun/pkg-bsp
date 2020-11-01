@@ -1,3 +1,9 @@
+bsp-solidrun (36) UNRELEASED; urgency=medium
+
+  * imx8 bsp v2
+
+ -- Josua Mayer <josua@solid-run.com>  Sun, 01 Nov 2020 13:41:05 +0100
+
 bsp-solidrun (35) stable; urgency=medium
 
   * fixup old dts filenames in boot.scr

@@ -1,3 +1,34 @@
+#
+# BSP v2
+# accelerated GL* on Framebuffer + Wayland + X11
+#
+
+# gstreamer-plugins-base
+Package: gstreamer1.0-plugins-base-apps libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-base gstreamer1.0-gl libgstreamer-plugins-base1.0-0 gir1.2-gst-plugins-base-1.0 gstreamer1.0-x libgstreamer-gl1.0-0 gstreamer1.0-alsa
+Pin: release l=BSP:IMX8v2
+Pin-Priority: 1010
+
+# libdrm
+Package: libdrm-amdgpu1 libdrm-common libdrm-dev libdrm-etnaviv1 libdrm-exynos1 libdrm-freedreno1 libdrm-nouveau2 libdrm-omap1 libdrm-radeon1 libdrm-tegra0 libdrm-tests libdrm-vivante1 libdrm2
+Pin: release l=BSP:IMX8v2
+Pin-Priority: 1010
+
+# xserver
+Package: xserver-xorg-core xvfb xorg-server-source xdmx-tools xwayland xnest xserver-xephyr xserver-xorg-legacy xserver-common xserver-xorg-dev xdmx
+Pin: release l=BSP:IMX8v2
+Pin-Priority: 1010
+
+# libgbm (vivante)
+# - prevents version upgrade of libgbm-dev
+Package: libgbm1 libgbm-dev
+Pin: release l=BSP:IMX8v2
+Pin-Priority: 1010
+
+#
+# BSP v1
+# accelerated GL* on Framebuffer + Wayland
+#
+
 # give priority to Vivante libgbm
 # - prevents version upgrade of libgbm-dev
 Package: libgbm1 libgbm-dev
