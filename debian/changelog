@@ -1,6 +1,7 @@
-bsp-solidrun (36) UNRELEASED; urgency=medium
+bsp-solidrun (36) stable; urgency=medium
 
   * imx8 bsp v2
+  * add flash-kernel entry for i.MX8M Plus
 
  -- Josua Mayer <josua@solid-run.com>  Sun, 01 Nov 2020 13:41:05 +0100
 
