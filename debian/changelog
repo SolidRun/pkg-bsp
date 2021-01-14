@@ -1,3 +1,10 @@
+bsp-solidrun (37) stable; urgency=medium
+
+  * imx8: add broadcom bluetooth firmware
+  * imx8: add broadcom wifi firmware
+
+ -- Josua Mayer <josua@solid-run.com>  Thu, 14 Jan 2021 11:23:47 +0100
+
 bsp-solidrun (36) stable; urgency=medium
 
   * imx8 bsp v2

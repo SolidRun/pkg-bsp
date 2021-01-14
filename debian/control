@@ -47,6 +47,7 @@ Depends:
  ${misc:Depends},
  flash-kernel,
  firmware-atheros (>=20160824-1),
+ firmware-brcm80211,
  firmware-misc-nonfree (>= 20180518-1),
 Provides: ${diverted-files}
 Conflicts: ${diverted-files}
