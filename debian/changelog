@@ -1,3 +1,9 @@
+bsp-solidrun (38) stable; urgency=medium
+
+  * imx8: include regulatory db in initramfs
+
+ -- Josua Mayer <josua@solid-run.com>  Tue, 19 Jan 2021 15:11:33 +0100
+
 bsp-solidrun (37) stable; urgency=medium
 
   * imx8: add broadcom bluetooth firmware
