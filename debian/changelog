@@ -1,3 +1,9 @@
+bsp-solidrun (39) stable; urgency=medium
+
+  * imx6: apply current customizations only to buster release
+
+ -- Josua Mayer <josua@solid-run.com>  Sat, 17 Apr 2021 13:13:31 +0200
+
 bsp-solidrun (38) stable; urgency=medium
 
   * imx8: include regulatory db in initramfs

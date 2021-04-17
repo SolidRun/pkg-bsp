@@ -9,6 +9,23 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+export DEBIAN_IS_BUSTER := 0
+export DEBIAN_IS_BUSTER_OR_EARLIER := 0
+export DEBIAN_IS_STRETCH := 0
+export DEBIAN_IS_STRETCH_OR_EARLIER := 0
+export DEBIAN_VERSION := $(shell cat /etc/debian_version)
+export DEBIAN_VERSION_MAJOR := $(word 1, $(subst ., ,$(DEBIAN_VERSION)))
+export DEBIAN_VERSION_MINOR := $(word 2, $(subst ., ,$(DEBIAN_VERSION)))
+ifeq ($(DEBIAN_VERSION_MAJOR),10)
+export DEBIAN_IS_BUSTER := 1
+export DEBIAN_IS_BUSTER_OR_EARLIER := 1
+endif
+ifeq ($(DEBIAN_VERSION_MAJOR),9)
+export DEBIAN_IS_STRETCH := 1
+export DEBIAN_IS_STRETCH_OR_EARLIER := 1
+export DEBIAN_IS_BUSTER_OR_EARLIER := 1
+endif
+
 export DESTDIR_BOOTSCR=$(CURDIR)/debian/sr-imx6-bootscript
 export DESTDIR_IMX6=$(CURDIR)/debian/bsp-solidrun-imx6
 export DESTDIR_IMX8=$(CURDIR)/debian/bsp-solidrun-imx8
@@ -19,19 +36,30 @@ export DESTDIR_LX2K=$(CURDIR)/debian/bsp-solidrun-lx2k
 %:
 	dh $@ --with=config-package
 
+override_dh_clean:
+	dh_auto_clean
+	rm -f boot.imx6.scr
+	rm -f debian/bsp-solidrun-imx6.displace debian/bsp-solidrun-imx6.triggers
+
 override_dh_auto_build:
 	mkimage -A arm -O linux -T script -C none -a 0 -e 0 -d boot.imx6.txt boot.imx6.scr
+ifeq ($(DEBIAN_IS_BUSTER_OR_EARLIER),1)
+	cp -v debian/bsp-solidrun-imx6.displace.buster debian/bsp-solidrun-imx6.displace
+	cp -v debian/bsp-solidrun-imx6.triggers.buster debian/bsp-solidrun-imx6.triggers
+endif
 
 override_dh_auto_install:
 	# i.MX6 transitional boot-script for splitting out -eMMC DTB variants
 	install -v -m644 -D boot.imx6.scr $(DESTDIR_BOOTSCR)/boot/boot.scr
 
 	# i.MX6
+ifeq ($(DEBIAN_IS_BUSTER_OR_EARLIER),1)
 	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX6)/etc/flash-kernel/db.bsp
 	install -v -m755 -D initramfs-tools/imx-sdma.sh $(DESTDIR_IMX6)/etc/initramfs-tools/hooks/imx-sdma
 	install -v -m644 -D imx-hdmi-soc.conf $(DESTDIR_IMX6)/usr/share/alsa/cards/imx-hdmi-soc.conf
 	install -v -m644 -D imx-spdif.conf $(DESTDIR_IMX6)/usr/share/alsa/cards/imx-spdif.conf
-	install -v -m644 -D apt-preferences/bsp-solidrun-imx6 $(DESTDIR_IMX6)/etc/apt/preferences.d/bsp-solidrun-imx6
+	install -v -m644 -D apt-preferences/bsp-solidrun-imx6.buster $(DESTDIR_IMX6)/etc/apt/preferences.d/bsp-solidrun-imx6
+endif
 
 	# i.MX8
 	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX8)/etc/flash-kernel/db.bsp
@@ -58,5 +86,7 @@ override_dh_auto_install:
 	install -v -m644 -D flash-kernel/db $(DESTDIR_LX2K)/etc/flash-kernel/db.bsp
 
 override_dh_installudev:
+ifeq ($(DEBIAN_IS_BUSTER_OR_EARLIER),1)
 	dh_installudev --name=imx6
+endif
 	dh_installudev --name=imx8
