@@ -72,6 +72,7 @@ endif
 	install -v -m644 -D firmware/brcmfmac43455-sdio.txt $(DESTDIR_IMX8)/lib/firmware/brcm/brcmfmac43455-sdio.txt
 	install -v -m644 -D firmware/BCM4345C0.hcd $(DESTDIR_IMX8)/lib/firmware/brcm/BCM4345C0.hcd
 	install -v -m755 -D initramfs-tools/wireless-regdb.sh $(DESTDIR_IMX8)/etc/initramfs-tools/hooks/wireless-regdb
+	install -v -m755 -D initramfs-tools/bcmbt-fw.sh $(DESTDIR_IMX8)/etc/initramfs-tools/hooks/bcmbt-fw
 
 	# A38X
 	install -v -m644 -D flash-kernel/db $(DESTDIR_A38X)/etc/flash-kernel/db.bsp
