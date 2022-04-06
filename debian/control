@@ -87,3 +87,14 @@ Provides: ${diverted-files}
 Conflicts: ${diverted-files}
 Description: SolidRun LX2K BSP
  Provides essential configuration files and dependencies for SolidRun LX2K based devices.
+
+Package: bsp-solidrun-cn913
+Section: config
+Architecture: arm64
+Depends:
+ ${misc:Depends},
+ flash-kernel,
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
+Description: SolidRun CN913x BSP
+ Provides essential configuration files and dependencies for SolidRun CN913x based devices.

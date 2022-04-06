@@ -3,6 +3,44 @@
 #
 
 #
+# Marvell CN913x
+#
+Machine: SolidRun CN9130 based COM Express type 7
+Kernel-Flavors: arm64
+DTB-Id: marvell/cn9130-cex7.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun CN9130 based SOM Clearfog Base
+Kernel-Flavors: arm64
+DTB-Id: marvell/cn9130-cf-base.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun CN9130 based SOM Clearfog Pro
+Kernel-Flavors: arm64
+DTB-Id: marvell/cn9130-cf-pro.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun CN9131 based COM Express type 7
+Kernel-Flavors: arm64
+DTB-Id: marvell/cn9131-cex7.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+Machine: SolidRun CN9132 based COM Express type 7
+Kernel-Flavors: arm64
+DTB-Id: marvell/cn9132-cex7.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
+#
 # NXP LX2K (downstream)
 #
 

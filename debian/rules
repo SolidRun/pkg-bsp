@@ -32,6 +32,7 @@ export DESTDIR_IMX8=$(CURDIR)/debian/bsp-solidrun-imx8
 export DESTDIR_A38X=$(CURDIR)/debian/bsp-solidrun-a38x
 export DESTDIR_8040=$(CURDIR)/debian/bsp-solidrun-8040
 export DESTDIR_LX2K=$(CURDIR)/debian/bsp-solidrun-lx2k
+export DESTDIR_CN913=$(CURDIR)/debian/bsp-solidrun-cn913
 
 %:
 	dh $@ --with=config-package
@@ -85,6 +86,14 @@ endif
 
 	# LX2K
 	install -v -m644 -D flash-kernel/db $(DESTDIR_LX2K)/etc/flash-kernel/db.bsp
+
+	# CN913x
+	install -v -m644 -D flash-kernel/db $(DESTDIR_CN913)/etc/flash-kernel/db.bsp
+	install -v -m644 -D flash-kernel/cn9130-cex7.dtb $(DESTDIR_CN913)/etc/flash-kernel/dtbs/cn9130-cex7.dtb
+	install -v -m644 -D flash-kernel/cn9130-cf-base.dtb $(DESTDIR_CN913)/etc/flash-kernel/dtbs/cn9130-cf-base.dtb
+	install -v -m644 -D flash-kernel/cn9130-cf-pro.dtb $(DESTDIR_CN913)/etc/flash-kernel/dtbs/cn9130-cf-pro.dtb
+	install -v -m644 -D flash-kernel/cn9131-cex7.dtb $(DESTDIR_CN913)/etc/flash-kernel/dtbs/cn9131-cex7.dtb
+	install -v -m644 -D flash-kernel/cn9132-cex7.dtb $(DESTDIR_CN913)/etc/flash-kernel/dtbs/cn9132-cex7.dtb
 
 override_dh_installudev:
 ifeq ($(DEBIAN_IS_BUSTER_OR_EARLIER),1)
