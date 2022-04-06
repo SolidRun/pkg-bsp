@@ -1,3 +1,9 @@
+bsp-solidrun (41) stable; urgency=medium
+
+  * imx8: include bluetooth firmware in initramfs
+
+ -- Josua Mayer <josua@solid-run.com>  Tue, 06 Jul 2021 08:34:11 +0000
+
 bsp-solidrun (40) stable; urgency=medium
 
   * imx8: add flash-kernel entry for imx8mp cubox pulse
