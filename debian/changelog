@@ -1,3 +1,9 @@
+bsp-solidrun (43) stable; urgency=medium
+
+  * imx8: update dtb mapping with new 5.10 names
+
+ -- Josua Mayer <josua@solid-run.com>  Sat, 12 Mar 2022 14:38:57 +0200
+
 bsp-solidrun (42) stable; urgency=medium
 
   * cn913x: add DTBs
