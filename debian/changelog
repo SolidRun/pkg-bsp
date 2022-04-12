@@ -1,3 +1,9 @@
+bsp-solidrun (44) stable; urgency=medium
+
+  * imx8: add flash-kernel entry for i.MX8MN Compact
+
+ -- Josua Mayer <josua@solid-run.com>  Tue, 12 Apr 2022 08:12:34 +0000
+
 bsp-solidrun (43) stable; urgency=medium
 
   * imx8: update dtb mapping with new 5.10 names

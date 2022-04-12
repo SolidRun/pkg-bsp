@@ -70,6 +70,12 @@ Required-Packages: u-boot-tools
 # NXP i.MX8
 #
 
+Machine: SolidRun i.MX8MN Compact
+DTB-Id: imx8mn-compact.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: imx8 bootscr.uboot-generic
+Required-Packages: u-boot-tools
+
 Machine: SolidRun i.MX8MM HummingBoard Pulse
 DTB-Id: imx8mm-hummingboard-pulse.dtb
 Boot-Script-Path: /boot/boot.scr
