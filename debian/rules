@@ -16,6 +16,10 @@ export DEBIAN_IS_STRETCH_OR_EARLIER := 0
 export DEBIAN_VERSION := $(shell cat /etc/debian_version)
 export DEBIAN_VERSION_MAJOR := $(word 1, $(subst ., ,$(DEBIAN_VERSION)))
 export DEBIAN_VERSION_MINOR := $(word 2, $(subst ., ,$(DEBIAN_VERSION)))
+ifeq ($(DEBIAN_VERSION_MAJOR),11)
+export DEBIAN_IS_BULLSEYE := 1
+export DEBIAN_IS_BULLSEYE_OR_EARLIER := 1
+endif
 ifeq ($(DEBIAN_VERSION_MAJOR),10)
 export DEBIAN_IS_BUSTER := 1
 export DEBIAN_IS_BUSTER_OR_EARLIER := 1
@@ -44,7 +48,7 @@ override_dh_clean:
 
 override_dh_auto_build:
 	mkimage -A arm -O linux -T script -C none -a 0 -e 0 -d boot.imx6.txt boot.imx6.scr
-ifeq ($(DEBIAN_IS_BUSTER_OR_EARLIER),1)
+ifeq ($(DEBIAN_IS_BULLSEYE_OR_EARLIER),1)
 	cp -v debian/bsp-solidrun-imx6.displace.buster debian/bsp-solidrun-imx6.displace
 	cp -v debian/bsp-solidrun-imx6.triggers.buster debian/bsp-solidrun-imx6.triggers
 endif
@@ -60,6 +64,10 @@ ifeq ($(DEBIAN_IS_BUSTER_OR_EARLIER),1)
 	install -v -m644 -D imx-hdmi-soc.conf $(DESTDIR_IMX6)/usr/share/alsa/cards/imx-hdmi-soc.conf
 	install -v -m644 -D imx-spdif.conf $(DESTDIR_IMX6)/usr/share/alsa/cards/imx-spdif.conf
 	install -v -m644 -D apt-preferences/bsp-solidrun-imx6.buster $(DESTDIR_IMX6)/etc/apt/preferences.d/bsp-solidrun-imx6
+endif
+ifeq ($(DEBIAN_IS_BULLSEYE),1)
+	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX6)/etc/flash-kernel/db.bsp
+	install -v -m644 -D apt-preferences/bsp-solidrun-imx6.bullseye $(DESTDIR_IMX6)/etc/apt/preferences.d/bsp-solidrun-imx6
 endif
 
 	# i.MX8

@@ -1,3 +1,9 @@
+bsp-solidrun (46) stable; urgency=medium
+
+  * imx6: pin kernel package to custom bsp repo
+
+ -- Josua Mayer <josua@solid-run.com>  Sun, 10 Jul 2022 12:44:36 +0200
+
 bsp-solidrun (45) stable; urgency=medium
 
   * imx6: add flash-kernel entry for i.MX6 HummingBoard CBi

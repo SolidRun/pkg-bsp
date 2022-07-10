@@ -1,0 +1,4 @@
+# always install forked kernel
+Package: linux-image-armmp
+Pin: release o=solidrun/debian/bsp 
+Pin-Priority: 1000
