@@ -16,9 +16,16 @@ export DEBIAN_IS_STRETCH_OR_EARLIER := 0
 export DEBIAN_VERSION := $(shell cat /etc/debian_version)
 export DEBIAN_VERSION_MAJOR := $(word 1, $(subst ., ,$(DEBIAN_VERSION)))
 export DEBIAN_VERSION_MINOR := $(word 2, $(subst ., ,$(DEBIAN_VERSION)))
+ifeq ($(DEBIAN_VERSION_MAJOR),12)
+export DEBIAN_IS_BOOKWORM := 1
+export DEBIAN_IS_BOOKWORM_OR_EARLIER := 1
+export DEBIAN_IS_BULLSEYE_OR_EARLIER := 1
+export DEBIAN_IS_BUSTER_OR_EARLIER := 1
+endif
 ifeq ($(DEBIAN_VERSION_MAJOR),11)
 export DEBIAN_IS_BULLSEYE := 1
 export DEBIAN_IS_BULLSEYE_OR_EARLIER := 1
+export DEBIAN_IS_BUSTER_OR_EARLIER := 1
 endif
 ifeq ($(DEBIAN_VERSION_MAJOR),10)
 export DEBIAN_IS_BUSTER := 1
@@ -63,11 +70,17 @@ ifeq ($(DEBIAN_IS_BUSTER_OR_EARLIER),1)
 	install -v -m755 -D initramfs-tools/imx-sdma.sh $(DESTDIR_IMX6)/etc/initramfs-tools/hooks/imx-sdma
 	install -v -m644 -D imx-hdmi-soc.conf $(DESTDIR_IMX6)/usr/share/alsa/cards/imx-hdmi-soc.conf
 	install -v -m644 -D imx-spdif.conf $(DESTDIR_IMX6)/usr/share/alsa/cards/imx-spdif.conf
+endif
+ifeq ($(DEBIAN_IS_BUSTER),1)
 	install -v -m644 -D apt-preferences/bsp-solidrun-imx6.buster $(DESTDIR_IMX6)/etc/apt/preferences.d/bsp-solidrun-imx6
 endif
 ifeq ($(DEBIAN_IS_BULLSEYE),1)
 	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX6)/etc/flash-kernel/db.bsp
 	install -v -m644 -D apt-preferences/bsp-solidrun-imx6.bullseye $(DESTDIR_IMX6)/etc/apt/preferences.d/bsp-solidrun-imx6
+endif
+ifeq ($(DEBIAN_IS_BOOKWORM),1)
+	install -v -m644 -D flash-kernel/db $(DESTDIR_IMX6)/etc/flash-kernel/db.bsp
+	install -v -m644 -D apt-preferences/bsp-solidrun-imx6.bookworm $(DESTDIR_IMX6)/etc/apt/preferences.d/bsp-solidrun-imx6
 endif
 
 	# i.MX8

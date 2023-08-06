@@ -1,3 +1,9 @@
+bsp-solidrun (47) stable; urgency=medium
+
+  * imx6: pin kernel package to custom bsp repo on bookworm release
+
+ -- Josua Mayer <josua@solid-run.com>  Sun, 06 Aug 2023 14:32:04 +0300
+
 bsp-solidrun (46) stable; urgency=medium
 
   * imx6: pin kernel package to custom bsp repo
