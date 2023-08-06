@@ -8,6 +8,7 @@ Build-Depends:
  u-boot-tools,
 Standards-Version: 3.9.6
 Homepage: <insert the upstream URL, if relevant>
+Multi-Arch: same
 
 Package: bsp-cuboxi
 Architecture: armel armhf
