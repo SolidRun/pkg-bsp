@@ -1,3 +1,9 @@
+bsp-solidrun (48) stable; urgency=medium
+
+  * imx6: fix installation of flash-kernel db overrides for buster
+
+ -- Josua Mayer <josua@solid-run.com>  Mon, 04 Sep 2023 13:47:15 +0000
+
 bsp-solidrun (47) stable; urgency=medium
 
   * imx6: pin kernel package to custom bsp repo on bookworm release
